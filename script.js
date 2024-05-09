@@ -17,6 +17,8 @@ function setGame(){
         tile.id = i.toString();
         document.getElementById("board").appendChild(tile);
     }
+    //nastavujeme interval zobrazenia na každých 2000milisek
+    setInterval(setMole, 2000);
 }
 // 4 do funkcie ideme dosadiť výpočet náhodnosti
 function getRandomTile(){

@@ -22,3 +22,8 @@ body {
     background-image: url("./pipe.png");
     background-size: cover;
 }
+/*Ideme nastaviť obrázok mole na menšiu veľkosť*/
+#board div img {
+    width: 100px;
+    height: 100px;
+}
