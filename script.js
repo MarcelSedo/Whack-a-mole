@@ -1,6 +1,7 @@
-// 1 premenná, ktorá bude zisťovať, ktorý tile má mole
+// krok 1 - premenná, ktorá bude zisťovať, ktorý tile má mole
 let currMoleTile;
-
+// vytvárame to isté, len pre rastlinu
+let currPlantTile;
 
 //pri otváraní okna privoláme setGame
 window.onload = function(){
@@ -41,4 +42,19 @@ function setMole(){
     // 5 vkladáme obrázok do funkcie, ktorá náhodne vyvolá mole
     currMoleTile = document.getElementById(num);
     currMoleTile.appendChild(mole);
+}
+
+function setPlant() {
+    //vymazanie pred každým klikom
+    if (currPlantTile) {
+        currPlantTile.innerHTML = "";
+    }
+    //nastavenie obrázka
+    let plant = document.createElement("img");
+    plant.src = "./piranha-plant.png";
+    //nastavenie random funkcie pre výpočet
+    let num = getRandomTile();
+    //vyberáme a appendujeme obrázok
+    currPlantTile = document.getElementById(num);
+    currPlantTile.appendChild(plant);
 }
