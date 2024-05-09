@@ -2,6 +2,9 @@
 let currMoleTile;
 // vytvárame to isté, len pre rastlinu
 let currPlantTile;
+//ideme vytvoriť kliknuteľné tily a počítanie
+let score = 0;
+let gameOver = false;
 
 //pri otváraní okna privoláme setGame
 window.onload = function(){
@@ -18,8 +21,9 @@ function setGame(){
         tile.id = i.toString();
         document.getElementById("board").appendChild(tile);
     }
-    //nastavujeme interval zobrazenia na každých 2000milisek
-    setInterval(setMole, 2000);
+    //nastavujeme interval zobrazenia na každých 1000 a 2000milisek
+    setInterval(setMole, 1000);
+    setInterval(setPlant, 2000);
 }
 // 4 do funkcie ideme dosadiť výpočet náhodnosti
 function getRandomTile(){
@@ -39,6 +43,10 @@ function setMole(){
     mole.src = "./monty-mole.png";
     // 3 náhodná funkcia
     let num = getRandomTile();
+    //pridávame podmienku aby sa nezobrazoval mole a plant na rovnakom poli
+    if (currPlantTile && currPlantTile.id === num) {
+        return;
+    }
     // 5 vkladáme obrázok do funkcie, ktorá náhodne vyvolá mole
     currMoleTile = document.getElementById(num);
     currMoleTile.appendChild(mole);
@@ -54,6 +62,10 @@ function setPlant() {
     plant.src = "./piranha-plant.png";
     //nastavenie random funkcie pre výpočet
     let num = getRandomTile();
+    //nastavenie podmienky pre zobrazenie tilov
+    if (currMoleTile && currMoleTile.id === num){
+        return;
+    }
     //vyberáme a appendujeme obrázok
     currPlantTile = document.getElementById(num);
     currPlantTile.appendChild(plant);
