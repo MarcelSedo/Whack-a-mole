@@ -29,6 +29,11 @@ function getRandomTile(){
 
 // 2 funkcia naviazaná na mole - tá to bude zisťovať
 function setMole(){
+//nastavujeme neustále vymazávanie mole pred spusetním - nech ich nie je nekonečno
+    if(currMoleTile){
+        currMoleTile.innerHTML = "";
+    }
+
     let mole = document.createElement("img");
     mole.src = "./monty-mole.png";
     // 3 náhodná funkcia
