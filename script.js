@@ -1,4 +1,5 @@
-
+// 1 premenná, ktorá bude zisťovať, ktorý tile má mole
+let currMoleTile;
 
 
 //pri otváraní okna privoláme setGame
@@ -16,4 +17,18 @@ function setGame(){
         tile.id = i.toString();
         document.getElementById("board").appendChild(tile);
     }
+}
+// 4 do funkcie ideme dosadiť výpočet náhodnosti
+function getRandomTile(){
+    //vzorec pre náhodné číslo od 0 po 8 - zaokrúhľujeme totiž nadol
+    let num = Math.floor(Math.random()*9);
+    return num.toString();
+}
+
+// 2 funkcia naviazaná na mole - tá to bude zisťovať
+function setMole(){
+    let mole = document.createElement("img");
+    mole.src = "./monty-mole.png";
+    // 3 náhodná funkcia
+    let num = getRandomTile();
 }
