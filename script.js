@@ -31,4 +31,7 @@ function setMole(){
     mole.src = "./monty-mole.png";
     // 3 náhodná funkcia
     let num = getRandomTile();
+    // 5 vkladáme obrázok do funkcie, ktorá náhodne vyvolá mole
+    currMoleTile = document.getElementById(num);
+    currMoleTile.appendChild(mole);
 }
