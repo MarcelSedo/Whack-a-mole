@@ -19,6 +19,8 @@ function setGame(){
         //tu budeme zisťovať, na ktorý tile hráč klikol a ktorý tile obsahuje rastlinu a ktorý bobra
         let tile = document.createElement("div")
         tile.id = i.toString();
+        //pridávame kliker - umožňuje vybrať tile
+        tile.addEventListener("click", selectTile);
         document.getElementById("board").appendChild(tile);
     }
     //nastavujeme interval zobrazenia na každých 1000 a 2000milisek
@@ -34,7 +36,12 @@ function getRandomTile(){
 
 // 2 funkcia naviazaná na mole - tá to bude zisťovať
 function setMole(){
-//nastavujeme neustále vymazávanie mole pred spusetním - nech ich nie je nekonečno
+    //nastavenie konca hry - ak hra už nie je 
+    if (gameOver) {
+        return;
+    }
+
+    //nastavujeme neustále vymazávanie mole pred spusetním - nech ich nie je nekonečno
     if(currMoleTile){
         currMoleTile.innerHTML = "";
     }
@@ -53,6 +60,10 @@ function setMole(){
 }
 
 function setPlant() {
+    //nastavenie vynulovania pri Gameover
+    if(gameOver){
+        return;
+    }
     //vymazanie pred každým klikom
     if (currPlantTile) {
         currPlantTile.innerHTML = "";
@@ -69,4 +80,18 @@ function setPlant() {
     //vyberáme a appendujeme obrázok
     currPlantTile = document.getElementById(num);
     currPlantTile.appendChild(plant);
+}
+//vytvárame klikaciu funkciu
+function selectTile(){
+    if (gameOver){
+        return;
+    }
+    // toto kontroluje, či klikáme na obrázok mole - zvyšuje body a priraďuje ho ku konkr. ID
+    if (this === currMoleTile) {
+        score += 10;
+        document.getElementById("score").innerText = score.toString()
+    } else if (this === currPlantTile) {
+        document.getElementById("score").innerText = "GAME OVER: " + score.toString();
+        gameOver = true;
+    }
 }
