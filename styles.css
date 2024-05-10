@@ -19,7 +19,7 @@ h2 {
 body {
     font-family: 'Horror Type', sans-serif;
     text-align: center;
-    background: url("./mario-bg.jpg");
+    background: url("./cemetery.jpg");
 }
 
 #board {
@@ -36,7 +36,7 @@ body {
 #board div {
     width: 180px;
     height: 180px;
-    background-image: url("./pipe.png");
+    background-image: url("./grave.png");
     background-size: cover;
 }
 /*Ideme nastaviť obrázok mole na menšiu veľkosť*/
