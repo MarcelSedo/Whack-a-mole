@@ -10,11 +10,12 @@ h2 {
     border: 2px solid red;
     text-align: center;
     width: 280px;
-    padding: 5px;
     margin: 0 auto;
     margin-bottom: 5px;
     border-radius: 50px;
     background-color: rgba(255, 204, 214, 0.607);
+    letter-spacing: 3px;
+    font-size: 40px;
 }
 body {
     font-family: 'Horror Type', sans-serif;
