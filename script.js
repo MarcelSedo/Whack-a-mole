@@ -47,7 +47,7 @@ function setMole(){
     }
 
     let mole = document.createElement("img");
-    mole.src = "./monty-mole.png";
+    mole.src = "./ruby.png";
     // 3 náhodná funkcia
     let num = getRandomTile();
     //pridávame podmienku aby sa nezobrazoval mole a plant na rovnakom poli
@@ -70,7 +70,7 @@ function setPlant() {
     }
     //nastavenie obrázka
     let plant = document.createElement("img");
-    plant.src = "./piranha-plant.png";
+    plant.src = "./ghost.png";
     //nastavenie random funkcie pre výpočet
     let num = getRandomTile();
     //nastavenie podmienky pre zobrazenie tilov
