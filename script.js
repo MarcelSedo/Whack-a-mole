@@ -1,7 +1,7 @@
 // krok 1 - premenná, ktorá bude zisťovať, ktorý tile má mole
 let currMoleTile;
 // vytvárame to isté, len pre rastlinu
-let currPlantTile;
+let currGhostTile;
 //ideme vytvoriť kliknuteľné tily a počítanie
 let score = 0;
 let gameOver = false;
@@ -25,7 +25,7 @@ function setGame(){
     }
     //nastavujeme interval zobrazenia na každých 1000 a 2000milisek
     setInterval(setMole, 900);
-    setInterval(setPlant, 1800);
+    setInterval(setGhost, 1800);
 }
 // 4 do funkcie ideme dosadiť výpočet náhodnosti
 function getRandomTile(){
@@ -51,7 +51,7 @@ function setMole(){
     // 3 náhodná funkcia
     let num = getRandomTile();
     //pridávame podmienku aby sa nezobrazoval mole a plant na rovnakom poli
-    if (currPlantTile && currPlantTile.id === num) {
+    if (currGhostTile && currGhostTile.id === num) {
         return;
     }
     // 5 vkladáme obrázok do funkcie, ktorá náhodne vyvolá mole
@@ -59,18 +59,18 @@ function setMole(){
     currMoleTile.appendChild(mole);
 }
 
-function setPlant() {
+function setGhost() {
     //nastavenie vynulovania pri Gameover
     if(gameOver){
         return;
     }
     //vymazanie pred každým klikom
-    if (currPlantTile) {
-        currPlantTile.innerHTML = "";
+    if (currGhostTile) {
+        currGhostTile.innerHTML = "";
     }
     //nastavenie obrázka
-    let plant = document.createElement("img");
-    plant.src = "./ghost.png";
+    let ghost = document.createElement("img");
+    ghost.src = "./ghost.png";
     //nastavenie random funkcie pre výpočet
     let num = getRandomTile();
     //nastavenie podmienky pre zobrazenie tilov
@@ -78,8 +78,8 @@ function setPlant() {
         return;
     }
     //vyberáme a appendujeme obrázok
-    currPlantTile = document.getElementById(num);
-    currPlantTile.appendChild(plant);
+    currGhostTile = document.getElementById(num);
+    currGhostTile.appendChild(ghost);
 }
 //vytvárame klikaciu funkciu
 function selectTile(){
@@ -90,7 +90,7 @@ function selectTile(){
     if (this === currMoleTile) {
         score += 10;
         document.getElementById("score").innerText = score.toString()
-    } else if (this === currPlantTile) {
+    } else if (this === currGhostTile) {
         document.getElementById("score").innerText = "GAME OVER: " + score.toString();
         gameOver = true;
     }
