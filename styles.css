@@ -1,8 +1,9 @@
 h1 {
-    color: rgb(173, 18, 18);
+    color: rgb(225, 2, 2);
     font-size: 80px;
     margin-bottom: -5px;
     margin-top: 0;
+    letter-spacing: 5px;
 }
 h2 {
     color: rgb(110, 0, 0);
