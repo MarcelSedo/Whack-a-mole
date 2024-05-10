@@ -21,6 +21,7 @@ body {
     font-family: 'Horror Type', sans-serif;
     text-align: center;
     background: url("./cemetery.jpg");
+    background-size: cover;
 }
 
 #board {
