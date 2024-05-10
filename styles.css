@@ -1,8 +1,11 @@
 h1 {
     color: rgb(173, 18, 18);
+    font-size: 80px;
+    margin-bottom: -5px;
+    margin-top: 0;
 }
 h2 {
-    color: rgb(253, 56, 56);
+    color: rgb(110, 0, 0);
     border: 2px solid red;
     text-align: center;
     width: 280px;
@@ -10,9 +13,10 @@ h2 {
     margin: 0 auto;
     margin-bottom: 5px;
     border-radius: 50px;
+    background-color: rgba(255, 204, 214, 0.607);
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Horror Type', sans-serif;
     text-align: center;
     background: url("./mario-bg.jpg");
 }
